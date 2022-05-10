@@ -8,7 +8,7 @@ public class Assignment1 {
 
 	public static void main(String[] args) throws Exception {
 
-		//JDBC
+		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/harman_db","root","");
 		Statement st = con.createStatement();
@@ -22,7 +22,7 @@ public class Assignment1 {
 		switch(option) {
 		case 1:
 			
-			//get the values
+			
 			System.out.print("Enter the PersonID:");
 			int pId = scan.nextInt();
 			System.out.print("Enter the FirstName:");
@@ -34,12 +34,12 @@ public class Assignment1 {
 			System.out.print("Enter the Address:");
 			String address = scan.next();
 			
-			//create the query
+			
 			String query = "INSERT INTO persons VALUES ("+pId+","+"'"+lName+"'"+","+"'"+fName+"'"+","+"'"+address+"'"+","+"'"+city+"'"+");";
-			//execute the query
+			
 			try {
 				st.executeUpdate(query);
-				System.out.println("Added to the Table");
+				System.out.println("Record is added");
 			}catch(Exception e) {
 				System.out.println(e.getMessage());
 			}
@@ -54,7 +54,7 @@ public class Assignment1 {
 			String query2 = "DELETE FROM persons WHERE PersonId ="+pID;
 			try {
 				st.execute(query2);
-				System.out.println("Deleted from the table");
+				System.out.println("Record is deleted");
 			}catch(Exception e) {
 				System.out.println(e.getMessage());
 			}
@@ -75,7 +75,7 @@ public class Assignment1 {
 			}
 			break;
 		default:
-			System.out.println("Invalid option Selected");
+			System.out.println("Select a valid option");
 			break;
 
 		}

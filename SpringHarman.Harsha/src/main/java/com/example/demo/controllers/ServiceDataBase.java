@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Model;
+import com.example.demo.model.Model;
 
 @Service
 public class ServiceDataBase {
@@ -30,8 +30,9 @@ public class ServiceDataBase {
 
 	public void updatePersons(Model body, int id) {
 		
-		dblst.save(body);
 		dblst.deleteById(id);
+		dblst.save(body);
+		
 		 
 	}
 

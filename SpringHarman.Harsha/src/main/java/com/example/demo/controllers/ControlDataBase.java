@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Model;
+import com.example.demo.model.Model;
 
 @RestController
 public class ControlDataBase {
@@ -42,9 +42,7 @@ public class ControlDataBase {
 		db.deletePersons(id);
 	}
 	
-	@RequestMapping("/dummy")
-	public String getDummy() {
-		return "This is dummy check";
-	}
+	
+	
 	
 }
